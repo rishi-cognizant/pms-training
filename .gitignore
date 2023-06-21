@@ -9,9 +9,6 @@ yarn-error.log*
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-#temp directory is only for keeping temperory files to my local in development 
-temp/
-
 # Dependency directories
 node_modules/
 jspm_packages/
