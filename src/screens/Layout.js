@@ -46,14 +46,14 @@ class Layout extends Component {
               {!isLoggedIn &&
                 <>
                   
-                  <button style={{ color: "#fff", fontWeight: "bold" }} type="button" class="btn btn-outline-light" to="/login">Login</button>
+                  <button style={{ color: "#fff", fontWeight: "bold" }} type="button" className="btn btn-outline-light" to="/login">Login</button>
                   
                 </>
               }
               {isLoggedIn &&
                 <div>
                  
-                  <button style={{ color: "#fff", fontWeight: "bold" }} type="button" class="btn btn-outline-light" to="/" onClick={() => this.logout()}>Logout</button>
+                  <button style={{ color: "#fff", fontWeight: "bold" }} type="button" className="btn btn-outline-light" to="/" onClick={() => this.logout()}>Logout</button>
                 </div>
               }
 
