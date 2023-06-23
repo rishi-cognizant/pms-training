@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from './Layout';
-import Projects from "../components/Home/Project";
+import Projects from "../components/Home/Project/Project";
 
 const Project = () => {
     return (
