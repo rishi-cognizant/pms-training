@@ -18,33 +18,33 @@ class IndexRoutes extends Component {
 
   render() {
     let { getUser: { isLoggedIn, token } } = this.props;
-    if(typeof isLoggedIn == "undefined") isLoggedIn = false;
+    if (typeof isLoggedIn == "undefined") isLoggedIn = false;
     return (
       <Routes>
-          <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           {!isLoggedIn && <>
-          {/* <AuthRoutes /> */}
-          <Route path="/login" element={<Login />} />
-        <Route path="/verify-otp" element={<VerifyOtp />} />
+            {/* <AuthRoutes /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/verify-otp" element={<VerifyOtp />} />
 
-          <Route path="/" element={<Navigate replace to="/login" />} />     
-          
+            <Route path="/" element={<Navigate replace to="/login" />} />
+
           </>}
           {isLoggedIn &&
             <>
-              <Route path="/login" element={<Navigate replace to="/" />} />    
-              <Route path="/signup" element={<Navigate replace to="/" />} />      
+              <Route path="/login" element={<Navigate replace to="/" />} />
+              <Route path="/signup" element={<Navigate replace to="/" />} />
               {/* <HomeRoutes /> */}
               <Route exact path='/' element={<Home />} />
-        <Route path="/userdetails" element={<UserDetails />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/taskDetails" element={<Task />} />
+              <Route path="/userdetails" element={<UserDetails />} />
+              <Route path="/project" element={<Project />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/taskDetails" element={<Task />} />
             </>
-          }  
-           
+          }
+
           {/* <StaticPagesRoutes/> */}
-          </Route>
+        </Route>
       </Routes>
     );
   }
