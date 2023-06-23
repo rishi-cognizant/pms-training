@@ -5,7 +5,7 @@ import TaskDetails from "../components/Home/Task/TaskDetails";
 const Task = () => {
     return (
       <>
-      <Layout>
+      
       <Container>
       <div style={{marginTop:"30px"}}>
         <Row className="justify-content-center">
@@ -15,7 +15,7 @@ const Task = () => {
         </Row>
         </div>
       </Container>
-      </Layout>
+      
       </>
     );
   };

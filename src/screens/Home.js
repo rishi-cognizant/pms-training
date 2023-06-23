@@ -1,10 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Layout from "./Layout";
 import user from "../assets/images/user.png";
-const Home = () => {
+import React from "react";
+class Home extends React.Component {
+
+  render (){
   return (
     <>
-      <Layout>
+      
         <Container>
           <Row className="justify-content-center">
             <div>
@@ -40,9 +42,10 @@ const Home = () => {
             </div>
           </Row>
         </Container>
-      </Layout>
+      
     </>
   );
+  }
 };
 
 export default Home;

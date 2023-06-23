@@ -5,7 +5,7 @@ import Projects from "../components/Home/Project/Project";
 const Project = () => {
     return (
       <>
-      <Layout>
+      
       <Container>
       <div style={{marginTop:"30px"}}>
         <Row className="justify-content-center">
@@ -15,7 +15,7 @@ const Project = () => {
         </Row>
         </div>
       </Container>
-      </Layout>
+      
       </>
     );
   };

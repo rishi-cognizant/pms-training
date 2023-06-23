@@ -5,7 +5,7 @@ import Users from "../components/Home/User/Users";
 const userDetails = () => {
   return (
     <>
-    <Layout>
+    
       <Container>
         <Row className="justify-content-center">
           <Col md="5">
@@ -15,7 +15,7 @@ const userDetails = () => {
         <Users />
         <div style={{marginTop:"30px"}}></div>
       </Container>
-      </Layout>
+      
     </>
   );  };
   

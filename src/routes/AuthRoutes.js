@@ -1,12 +1,13 @@
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "../screens/Login";
+
 
 const AuthRoutes = () => {
   return (
     <>
-      <Switch>  
-        <Route path="/login" component={Login} />
-      </Switch>
+      
+        <Route path="/login" element={<Login />} />
+      
     </>
   );
 };

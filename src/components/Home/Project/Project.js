@@ -5,7 +5,7 @@ import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import { Alert, Row, Form, Col, Button, Table, Container, Modal } from "react-bootstrap";
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import ReactPaginate from 'react-paginate';
 import EditProject from "./EditProject";
 import '../../../assets/scss/App.scss';
@@ -51,7 +51,7 @@ class CreateProject extends Component {
     selectedUser: [],
     currentPage: 1,
     totalPages: null,
-    itemsPerPage: 10,
+    itemsPerPage: 2,
   };
 
   onUserChange = event => {
@@ -60,8 +60,8 @@ class CreateProject extends Component {
 
   async componentDidMount() {
     const { currentPage, itemsPerPage } = this.state;
-    const response = await fetchApi("getUserName", "GET", {}, 200, null);
-    this.setState({ user_name: response.responseBody.data });
+    // const response = await fetchApi("getUserName", "GET", {}, 200, null);
+    // this.setState({ user_name: response.responseBody.data });
 
     const response1 = await fetchApi("getProjectDetails", "POST", { currentPage, itemsPerPage }, 200, null);
     console.log(response1)
@@ -204,7 +204,7 @@ class CreateProject extends Component {
               previousLabel={"← Previous"}
               nextLabel={"Next →"}
               onPageChange={this.handlePageChange}
-              pageRangeDisplayed={10}
+              pageRangeDisplayed={2}
               pageCount={this.state.totalPages}
 
               renderOnZeroPageCount={null}

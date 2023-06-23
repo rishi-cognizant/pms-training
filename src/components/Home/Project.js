@@ -5,7 +5,7 @@ import { Formik, Field} from "formik";
 import * as Yup from "yup";
 import {Alert, Row, Form, Col, Button, Table, Container, Modal} from "react-bootstrap";
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string()
@@ -44,8 +44,8 @@ class CreateProject extends Component {
   };
 
   async componentDidMount() {
-    const response = await fetchApi("getUserName", "GET", {}, 200, null);
-    this.setState({ user_name: response.responseBody.data });
+    // const response = await fetchApi("getUserName", "GET", {}, 200, null);
+    // this.setState({ user_name: response.responseBody.data });
     const response1 = await fetchApi("getProjectDetails", "GET", {}, 200, null);
     this.setState({ projectsData: response1.responseBody.data });
   }

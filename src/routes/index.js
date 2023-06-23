@@ -1,30 +1,45 @@
 import React, { Component } from "react";
-import { Redirect, Switch, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import { connect } from 'react-redux';
 import HomeRoutes from "./HomeRoutes";
 import AuthRoutes from "./AuthRoutes";
 import StaticPagesRoutes from "./StaticPagesRoutes";
+import Layout from "../screens/Layout";
+import Home from "../screens/Home";
+import UserDetails from "../screens/UserDetails";
+import Project from "../screens/Projects";
+import Task from "../screens/Task";
 
-class Routes extends Component {
+
+class IndexRoutes extends Component {
 
   render() {
     let { getUser: { isLoggedIn, token } } = this.props;
     if(typeof isLoggedIn == "undefined") isLoggedIn = false;
     return (
-      <Switch>
-          <Route>
-          {!isLoggedIn && <><AuthRoutes />
-          <Redirect exact from="/" to="/login" /> 
+      <Routes>
+          <Route path="/" element={<Layout />}>
+          {!isLoggedIn && <>
+          <AuthRoutes />
+          <Route path="/" element={<Navigate replace to="/login" />} />     
+          
           </>}
           {isLoggedIn &&
             <>
-              <HomeRoutes />
-              <Redirect exact from="/login" to="/" />
+              <Route path="/login" element={<Navigate replace to="/" />} />    
+              <Route path="/signup" element={<Navigate replace to="/" />} />      
+              {/* <HomeRoutes /> */}
+              <Route exact path='/' element={<Home />} />
+        <Route path="/userdetails" element={<UserDetails />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/taskDetails" element={<Task />} />
             </>
-          }   
-          <StaticPagesRoutes/>
-        </Route>
-      </Switch>
+          }  
+           
+          {/* <StaticPagesRoutes/> */}
+          </Route>
+      </Routes>
     );
   }
 }
@@ -37,4 +52,4 @@ const mapDispatchToProps = (dispatch) => ({
   dispatch,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Routes);
+export default connect(mapStateToProps, mapDispatchToProps)(IndexRoutes);

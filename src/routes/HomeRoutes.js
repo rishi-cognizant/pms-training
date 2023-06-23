@@ -1,14 +1,26 @@
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "../screens/Home";
+import UserDetails from "../screens/UserDetails";
+import Project from "../screens/Projects";
+import Task from "../screens/Task";
 
-const HomeRoutes = () => {
+import React from "react";
+
+class HomeRoutes extends React.Component {
+
+  render(){
   return (
     <>
-      <Switch>
-        <Route exact path='/' component={Home} />
-      </Switch>
-    </>
+    
+        <Route exact path='/' element={<Home />} />
+        <Route path="/userdetails" element={<UserDetails />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/taskDetails" element={<Task />} />
+    
+        </>
   );
+  }
 };
 
 export default (HomeRoutes);
