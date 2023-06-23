@@ -10,6 +10,9 @@ import UserDetails from "../screens/UserDetails";
 import Project from "../screens/Projects";
 import Task from "../screens/Task";
 
+import Login from "../screens/Login";
+import VerifyOtp from "../screens/Login";
+
 
 class IndexRoutes extends Component {
 
@@ -20,7 +23,10 @@ class IndexRoutes extends Component {
       <Routes>
           <Route path="/" element={<Layout />}>
           {!isLoggedIn && <>
-          <AuthRoutes />
+          {/* <AuthRoutes /> */}
+          <Route path="/login" element={<Login />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
+
           <Route path="/" element={<Navigate replace to="/login" />} />     
           
           </>}

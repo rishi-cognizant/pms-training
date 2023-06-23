@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "../screens/Login";
+import VerifyOtp from "../screens/Login";
 
 
 const AuthRoutes = () => {
@@ -7,6 +8,7 @@ const AuthRoutes = () => {
     <>
       
         <Route path="/login" element={<Login />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} />
       
     </>
   );

@@ -4,7 +4,7 @@ import Layout from "./Layout";
 const Prehome = () => {
     return (
         <>
-        <Layout>
+        
       <Container>
         <Row className="justify-content-center">
           <Col md="6">
@@ -12,7 +12,7 @@ const Prehome = () => {
           </Col>
         </Row>
       </Container>
-      </Layout>
+      
       </>
     );
   };

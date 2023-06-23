@@ -5,7 +5,7 @@ import Layout from "./Layout";
 const Login = () => {
   return (
     <>
-    <Layout>
+    
       <Container >
         <Row >
           <Col className="login_form">
@@ -13,7 +13,7 @@ const Login = () => {
           </Col>
         </Row>
       </Container>
-      </Layout>
+    
     </>
   );
 };
