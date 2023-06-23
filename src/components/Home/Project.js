@@ -20,7 +20,7 @@ const validationSchema = Yup.object().shape({
     // .required("*user name is required"),
 });
 
-class CreatePost extends Component {
+class CreateProject extends Component {
   constructor(props) {
     super(props);
     this.projects = this.projects.bind(this);
@@ -257,4 +257,4 @@ const mapDispatchToProps = (dispatch) => ({
   dispatch,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreatePost);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateProject);
