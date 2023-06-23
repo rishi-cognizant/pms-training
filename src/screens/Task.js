@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from './Layout';
-import TaskDetails from "../components/Home/TaskDetails";
+import TaskDetails from "../components/Home/Task/TaskDetails";
 
 const Task = () => {
     return (
