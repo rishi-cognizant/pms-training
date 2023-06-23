@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "./Layout";
-import Users from "../components/Home/Users";
+import Users from "../components/Home/User/Users";
 
 const userDetails = () => {
   return (
