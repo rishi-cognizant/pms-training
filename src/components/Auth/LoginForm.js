@@ -5,6 +5,8 @@ import { Button, Col, Form, Row, Alert } from "react-bootstrap";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/auth.actions";
 
+import { Navigate } from "react-router-dom";
+
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email("*Must be a valid email address")
@@ -16,7 +18,8 @@ const validationSchema = Yup.object().shape({
 
 class LoginForm extends Component {
   state ={
-    showSuccess: false
+    showSuccess: false,
+    loginSuccess: false,
   }
   constructor(props) {
     super(props);
@@ -33,6 +36,8 @@ class LoginForm extends Component {
     const {isLoading, isError, isSuccess} = this.props.loginUser;
     return (
       <Row>
+        {this.state.isSuccess &&
+        <Navigate to="/verify-otp" replace={true} />}
         <Col>
           <Formik
             initialValues={{
