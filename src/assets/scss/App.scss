@@ -1,23 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
 
-
-body{
-  background-image : url('../images/bg.png');
-  background-size: cover;
-
+* {
+  padding: 0;
+  margin: 0;
 }
+
 .pb-3 {
   margin-top: 5%;
   padding-bottom: 10rem !important;
   background-color: #fff;
   border-style: inset;
 }
+
 .row-color {
   background-color: blue;
 }
+
 .red-bg-color {
   background-color: red;
 }
+
 .nav-item::after {
   content: '';
   display: block;
@@ -44,12 +46,14 @@ body{
   padding: 25px 5px;
   transition: 0.2s
 }
+
 .navbar-nav a {
   color: #fff;
   text-decoration: none;
   margin-right: 5px;
   font-size: 20px;
 }
+
 .navbar-brand a {
   color: #fff;
   text-decoration: none;
@@ -64,6 +68,59 @@ body{
   font-size: 18px;
   margin-left: 10px;
 
+}
+
+.pagination>li {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.pagination>li {
+  list-style: none;
+  border: 0.9px solid;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #2c689c;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+
+.pagination>li.active>a {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+/* Style the active class (and buttons on mouse-over) */
+.pagination>li>a:hover {
+  background-color: #218838;
+  color: white;
+}
+
+.pagination>li:first-child>a,
+.pagination>li:first-child>span {
+  margin-left: 0;
+  padding: 0px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  display: none !important;
+}
+
+.pagination>li:last-child>a,
+.pagination>li:last-child>span {
+  border-bottom-right-radius: 4px;
+  margin-right: 0;
+  padding: 0px !important;
+  border-top-right-radius: 4px;
+  display: none !important;
 }
 
 .error {
@@ -82,7 +139,7 @@ body{
   padding: 10px;
 }
 
-.formLogin{
+.formLogin {
   padding: 0.5em 0.2em;
   position: relative;
   padding: 10px;
@@ -95,14 +152,15 @@ body{
   margin: 50px;
 }
 
-.loadingBlocker{
+.loadingBlocker {
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  div{
+  background-color: rgba(0, 0, 0, 0.5);
+
+  div {
     top: 33%;
     left: auto;
     right: auto;
@@ -116,18 +174,19 @@ body{
 
 .login_form {
   justify-content: center;
-  left:80px;
+  left: 80px;
   width: 250px;
   height: 250px;
   margin: 50px;
   right: auto;
-  margin-left : 100px;;
+  margin-left: 100px;
+  ;
 
 }
 
 .btn {
   justify-content: center;
-  left:80px;
+  left: 80px;
 }
 
 .projects-table {
@@ -151,3 +210,28 @@ body{
   border-color: var(--bs-table-border-color);
 }
 
+.delete {
+  background-color: #786ac9; /* Green */
+  border: none;
+  color: white;
+  padding: 7px 11px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 15px;
+}
+.edit {
+  background-color: #786ac9; /* Green */
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.close{
+  text-align: right;
+}
