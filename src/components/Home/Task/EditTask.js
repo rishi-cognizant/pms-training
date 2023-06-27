@@ -127,7 +127,7 @@ class EditTask extends Component {
                                     <Form.Control
                                         type="text"
                                         name="title"
-                                        placeholder="Title"
+                                        placeholder="Please enter title of the task"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.title}
@@ -143,7 +143,7 @@ class EditTask extends Component {
                                         type="text"
                                         as="textarea"
                                         name="description"
-                                        placeholder="Description"
+                                        placeholder="Please enter description of the task"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.description}
