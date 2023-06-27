@@ -309,6 +309,7 @@ class TaskDetails extends Component {
                     <Form.Label>Description :</Form.Label>
                     <Form.Control
                       type="text"
+                      as="textarea"
                       name="description"
                       placeholder="Please enter description of the task"
                       onChange={handleChange}
