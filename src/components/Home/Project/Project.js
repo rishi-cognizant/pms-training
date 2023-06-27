@@ -11,6 +11,7 @@ import ReactPaginate from 'react-paginate';
 import EditProject from "./EditProject";
 import '../../../assets/scss/App.scss';
 
+
 const validationSchema = Yup.object().shape({
   title: Yup.string().max(50)
     .required("*Title is required"),
@@ -41,10 +42,10 @@ class CreateProject extends Component {
   }
 
   state = {
-    errorMessage:"",
+    errorMessage: "",
     projectsData: [],
     editProjectsData: {},
-    editProjectData:{},
+    editProjectData: {},
     user_name: [],
     user_id: 0,
     project_id: 0,
@@ -132,10 +133,10 @@ class CreateProject extends Component {
     const { show, isSuccess, isError, user_name, user_id } = this.state;
     const response = await fetchApi('addNewProject', 'POST', values, 200, token);
     if (response.responseBody.status === 0) {
-      this.setState({ isError: true ,errorMessage : response.responseBody.message});
+      this.setState({ isError: true, errorMessage: response.responseBody.message });
       let _this = this;
       setTimeout(function () {
-          _this.setState({ isError: false });
+        _this.setState({ isError: false });
       }, 4000)
     } else {
       const response1 = await fetchApi("getProjectDetails1", "GET", {}, 200, null);
@@ -189,7 +190,7 @@ class CreateProject extends Component {
     if (typeof this.state.projectsData != "undefined" && this.state.projectsData.length > 0)
       return (<>
         <Row>
-          <EditProject projectsData={this.state.projectsData} editProjectsData={this.state.editProjectsData} project_id={this.state.project_id} showPopup={this.state.showPopup} closeEditForm={this.closeEditForm} onHandleEditProjectSuccess={ this.handleEditProjectSuccess} />
+          <EditProject projectsData={this.state.projectsData} editProjectsData={this.state.editProjectsData} project_id={this.state.project_id} showPopup={this.state.showPopup} closeEditForm={this.closeEditForm} onHandleEditProjectSuccess={this.handleEditProjectSuccess} />
           <Col>
             <Button variant="success" onClick={() => this.openForm()}>Add New Project</Button>
             <div style={{ marginTop: "30px" }}>
@@ -267,7 +268,7 @@ class CreateProject extends Component {
                     </Alert>)}
                   {isError && (
                     <Alert key={"danger"} variant={"danger"}>
-                                        {errorMessage}
+                      {errorMessage}
                     </Alert>)}
                   <Form.Group controlId="formTitle" className="formName">
                     <Form.Label>Title :</Form.Label>
