@@ -36,7 +36,6 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Layout>
           <Container>
             <Row className="justify-content-center">
               <div className="mt-2">
@@ -76,7 +75,6 @@ class Home extends Component {
               </div>
             </Row>
           </Container>
-        </Layout>
       </>
     );
   }
