@@ -115,11 +115,11 @@ class EditUser extends Component {
                                         {errorMessage}
                                     </Alert>)}
                                 <Form.Group controlId="formname" className="formName">
-                                    <Form.Label>name :</Form.Label>
+                                    <Form.Label>Full Name :</Form.Label>
                                     <Form.Control
                                         type="text"
                                         name="name"
-                                        placeholder="name"
+                                        placeholder="Please Enter full name"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.name}
@@ -134,7 +134,7 @@ class EditUser extends Component {
                                     <Form.Control
                                         type="text"
                                         name="email"
-                                        placeholder="email"
+                                        placeholder="Please enter your Email Address (eg: xyz@gmail.com)"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         value={values.email}
@@ -151,7 +151,7 @@ class EditUser extends Component {
                                     <Form.Control
                                         type="text"
                                         name="mobile"
-                                        placeholder="mobile"
+                                        placeholder="Please enter 10 digits mobile number(e.g. : 1234567890)"
                                         onChange={handleChange}
                                         onBlur={handleBlur}
                                         maxLength="10"
