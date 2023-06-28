@@ -8,7 +8,8 @@ import { Alert, Row, Form, Col, Button, Table, Container, Modal } from "react-bo
 import { Typeahead } from 'react-bootstrap-typeahead';
 import ReactPaginate from 'react-paginate';
 import EditProject from "./EditProject";
-import '../../../assets/scss/App.scss';
+import AssignProject from "./AssignProject";
+// import '../../../assets/scss/App.scss';
 
 
 const validationSchema = Yup.object().shape({
@@ -191,7 +192,10 @@ class CreateProject extends Component {
         <Row>
           <EditProject projectsData={this.state.projectsData} editProjectsData={this.state.editProjectsData} project_id={this.state.project_id} showPopup={this.state.showPopup} closeEditForm={this.closeEditForm} onHandleEditProjectSuccess={this.handleEditProjectSuccess} />
           <Col>
-            <Button variant="success" onClick={() => this.openForm()}>Add New Project</Button>
+            <div className="header">
+              <Button variant="success" onClick={() => this.openForm()}>Add New Project</Button>
+              <AssignProject />
+            </div>
             <div style={{ marginTop: "30px" }}>
               <Table className="projects-table" striped bordered hover>
                 <thead>
@@ -338,19 +342,18 @@ class CreateProject extends Component {
                   </Form.Group>
 
                   {/* add autocomplete or typeahead to selct user */}
-
-                  <Button variant="primary" type="submit">
-                    Submit
-                  </Button>
+                  <div className="footter">
+                    <Button variant="primary" type="submit">
+                      Submit
+                    </Button>
+                    <Button variant="secondary" onClick={this.handleClose}>
+                      Close
+                    </Button>
+                  </div>
                 </form>
               )}
             </Formik>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
         </Modal>
       </>);
     else
@@ -472,19 +475,18 @@ class CreateProject extends Component {
                   </Form.Group>
 
                   {/* add autocomplete or typeahead to selct user */}
-
-                  <Button variant="primary" type="submit">
-                    Submit
-                  </Button>
+                  <div className="footter">
+                    <Button variant="primary" type="submit">
+                      Submit
+                    </Button>
+                    <Button variant="secondary" onClick={this.handleClose}>
+                      Close
+                    </Button>
+                  </div>
                 </form>
               )}
             </Formik>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
         </Modal>
         {this.emptyProjects()}</>;
 
