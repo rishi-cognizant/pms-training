@@ -6,7 +6,6 @@ import * as Yup from "yup";
 import moment from 'moment';
 import { Alert, Row, Form, Col, Button, Table, Container, Modal } from "react-bootstrap";
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import ReactPaginate from 'react-paginate';
 import EditProject from "./EditProject";
 import '../../../assets/scss/App.scss';
