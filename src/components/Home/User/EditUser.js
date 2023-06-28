@@ -6,15 +6,14 @@ import * as Yup from "yup";
 import { Alert, Row, Form, Col, Button, Modal } from "react-bootstrap";
 
 const validationSchema = Yup.object().shape({
-    email: Yup.string().max(100)
-        .email("*Must be a valid email address")
-        .required("*Email is required"),
-    name: Yup.string().matches(/^[A-Za-z]+$/, 'Name must contain only alphabetic characters').min(3).max(50)
-        .required("*name is required"),
-    mobile: Yup.string().matches(/^[0-9]{10}$/, '*must be 10 digits')
-        .required("*Mobile number is required"),
+  email: Yup.string().max(100)
+    .email("*Must be a valid email address")
+    .required("*Email is required"),
+  name: Yup.string().matches(/^[A-Za-z]+$/, 'Name must contain only alphabetic characters').min(3).max(50)
+    .required("*name is required"),
+  mobile: Yup.string().matches(/^[0-9]{10}$/, '*Mobile number must be 10 digits and only digits are allowed eg. (9863565467)')
+    .required("*Mobile number is required"),
 });
-
 
 class EditUser extends Component {
     constructor(props) {
