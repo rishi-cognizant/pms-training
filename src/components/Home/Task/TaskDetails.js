@@ -7,6 +7,7 @@ import moment from 'moment';
 import { Alert, Row, Col, Table, Button, Modal, Form } from "react-bootstrap";
 import EditTask from "./EditTask";
 import ReactPaginate from 'react-paginate';
+import AssignTask from "./AssignTask";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().max(50)
@@ -202,18 +203,13 @@ class TaskDetails extends Component {
     if (typeof this.state.tasksData != "undefined" && this.state.tasksData.length > 0)
       return (<>
         <Row>
-          {/* <div> Select User to show Tasks</div> */}
           <EditTask editTasksData={this.state.editTasksData} task_id={this.state.task_id} showPopup={this.state.showPopup} closeEditForm={this.closeEditForm} onHandleEditTaskSuccess={this.handleEditTaskSuccess} />
-
-          {/* add autocomplete or typeahead to selct user */}
-
-          {/* add a condition to get only selected user tasks details */}
-
-          <div style={{ marginTop: "30px" }}>
             <Col>
+            <div className="header">
               <Button variant="success" onClick={() => this.openForm()}>Add New Task</Button>
-              <div style={{ marginTop: "30px" }}>
-
+              <AssignTask />
+            </div>
+            <div style={{ marginTop: "30px" }}>
                 <Table striped bordered hover>
                   <thead>
                     <tr>
@@ -247,7 +243,6 @@ class TaskDetails extends Component {
                 />
               </Col>
             </Col>
-          </div>
         </Row>
 
         <Modal show={show} onHide={this.handleClose}>
@@ -359,19 +354,18 @@ class TaskDetails extends Component {
                   </Form.Group>
 
                   {/* add autocomplete or typeahead to selct user */}
-
-                  <Button variant="primary" type="submit">
-                    Submit
-                  </Button>
+                  <div className="footter">
+                    <Button variant="primary" type="submit">
+                      Submit
+                    </Button>
+                    <Button variant="secondary" onClick={this.handleClose}>
+                      Close
+                    </Button>
+                  </div>
                 </form>
               )}
             </Formik>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
         </Modal>
       </>);
     else
