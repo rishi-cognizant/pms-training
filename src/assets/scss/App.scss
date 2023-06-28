@@ -141,15 +141,35 @@
 
 .formLogin {
   padding: 0.5em 0.2em;
-  position: relative;
-  padding: 10px;
-  background-color: rgba(100, 93, 129, 0.171);
-  justify-content: center;
-  border-radius: 1px;
-  border: 2px solid black;
-  width: 350px;
-  height: 300px;
-  margin: 50px;
+    position: relative;
+    padding: 40px;
+    background-color: rgb(255 255 255 / 17%);
+    justify-content: center;
+    border-radius: 1px;
+    border: 2px solid #00000021;
+    width: 350px;
+    height: max-content;
+    margin: 50px;
+}
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*
+* Form styles
+*/
+.profile-name-card {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0 0;
+  min-height: 1em;
 }
 
 .loadingBlocker {
@@ -179,14 +199,17 @@
   height: 250px;
   margin: 50px;
   right: auto;
-  margin-left: 100px;
+ box-sizing: content-box
   ;
 
 }
 
-.btn {
+.btn-login {
   justify-content: center;
   left: 80px;
+  width: 100%;
+    margin-top: 30px;
+    background-color: #218838;
 }
 
 .projects-table {
@@ -234,4 +257,16 @@
 
 .close{
   text-align: right;
+}
+
+.footter{
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header{
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
 }
